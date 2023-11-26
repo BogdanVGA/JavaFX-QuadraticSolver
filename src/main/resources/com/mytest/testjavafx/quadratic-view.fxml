@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<GridPane
+        alignment="TOP_CENTER" hgap="30" vgap="20"
+        stylesheets="@quadratic.css"
+        xmlns:fx="http://javafx.com/fxml"
+        fx:controller="com.mytest.testjavafx.QuadraticController">
+
+    <columnConstraints>
+        <ColumnConstraints percentWidth="34"/>
+        <ColumnConstraints percentWidth="32"/>
+        <ColumnConstraints percentWidth="34"/>
+    </columnConstraints>
+
+    <padding>
+        <Insets bottom="25" left="25" right="25" top="25"/>
+    </padding>
+
+    <Text
+            text="Input the coefficients for the quadratic equation"
+            id="gridPaneTitle"
+            styleClass="gridPaneTitle"
+            GridPane.columnIndex="0" GridPane.rowIndex="0"
+            GridPane.columnSpan="3"/>
+
+    <Label
+            text="First coefficient (a):"
+            minWidth="160"
+            GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <Label
+            text="Second coefficient (b):"
+            minWidth="160"
+            GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <Label
+            text="Third coefficient (c):"
+            minWidth="160"
+            GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <Label
+            text="First root is:"
+            minWidth="160"
+            GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <Label
+            fx:id="firstRoot"
+            text=" "
+            minWidth="160"
+            GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+    <Label
+            text="Second root is:"
+            minWidth="160"
+            GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+    <Label
+            fx:id="secondRoot"
+            text=" "
+            minWidth="160"
+            GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+    <Text
+            fx:id="warning"
+            id="warning"
+            text=" "
+            GridPane.columnIndex="0" GridPane.rowIndex="6"
+            GridPane.columnSpan="3"/>
+
+    <TextField
+            fx:id="firstValueField"
+            minWidth="80"
+            GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <TextField
+            fx:id="secondValueField"
+            minWidth="80"
+            GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <TextField
+            fx:id="thirdValueField"
+            minWidth="80"
+            GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+    <Button
+            text="Solve equation"
+            minWidth="160"
+            GridPane.columnIndex="2" GridPane.rowIndex="1"
+            onAction="#pressSolveBtn"/>
+    <Button
+            text="Plot function"
+            minWidth="160"
+            GridPane.columnIndex="2" GridPane.rowIndex="2"
+            onAction="#pressGraphBtn"/>
+    <Button
+            text="Reset solver"
+            minWidth="160"
+            GridPane.columnIndex="2" GridPane.rowIndex="3"
+            onAction="#pressResetBtn"/>
+    <Button
+            fx:id="exitButton"
+            text="Exit solver"
+            minWidth="160"
+            GridPane.columnIndex="2" GridPane.rowIndex="4"
+            onAction="#pressExitBtn"/>
+
+    <LineChart fx:id="lineGraph"
+               GridPane.rowIndex="7"
+               GridPane.columnSpan="3"
+               createSymbols="false"
+               legendVisible="false">
+        <xAxis>
+            <NumberAxis label="x"
+                        lowerBound="-20"
+                        upperBound="20"
+                        tickUnit="2"/>
+        </xAxis>
+
+        <yAxis>
+            <NumberAxis label="f(x)"
+                        lowerBound="-20"
+                        upperBound="20"
+                        tickUnit="2"/>
+        </yAxis>
+    </LineChart>
+
+</GridPane>

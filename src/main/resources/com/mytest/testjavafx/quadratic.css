@@ -1,0 +1,23 @@
+
+#gridPaneTitle {
+   -fx-font-size: 18px;
+   -fx-font-family: "Arial Black";
+   -fx-fill: purple;
+   -fx-font-weight: bold;
+}
+
+#warning {
+   -fx-font-size: 14px;
+   -fx-font-family: "Arial Black";
+   -fx-fill: red;
+   -fx-font-weight: bold;
+}
+
+.chart-series-line {
+    -fx-stroke-width: 2px;
+    -fx-effect: null;
+}
+
+.default-color0.chart-series-line {
+    -fx-stroke: red;
+}
