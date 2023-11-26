@@ -1,0 +1,1 @@
+Java FX app that solves a quadratic equation and plots the graph of the quadratic function derived after finding the equation's roots.
