@@ -2,6 +2,7 @@ package com.mytest.testjavafx;
 
 import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -54,7 +55,8 @@ public class QuadraticController {
         double range = 20;
         LineChart.Series<Number, Number> series = new LineChart.Series<>();
         for (double x = -range; x <= range; x = x + 0.1) {
-            series.getData().add(new LineChart.Data<>(x, quad.evaluateFunction(x)));
+            XYChart.Data<Number, Number> chartData = new XYChart.Data<>(x, quad.evaluateFunction(x));
+            series.getData().add(chartData);
         }
         lineGraph.getData().add(series);
     }
